@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import me.piotrleb.paceon.presentation.ui.components.TrainingCard
 
 @Composable
 fun TrainingHistoryPage() {
