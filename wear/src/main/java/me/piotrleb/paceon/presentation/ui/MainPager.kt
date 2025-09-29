@@ -21,7 +21,7 @@ fun MainPager(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF0d0c0c))
+            .background(Color(0xFF100F0F))
     ) {
         HorizontalPager(
             state = pagerState,
@@ -29,13 +29,7 @@ fun MainPager(navController: NavController) {
                 .fillMaxSize(),
         ) {
                 page ->
-            Box(modifier = Modifier
-                .clip(CircleShape)
-                .graphicsLayer {
-                    shape = RoundedCornerShape(30.dp)
-                    clip = true
-                }
-            ){
+            Box{
                 when (page) {
                     0 -> TrainingHistoryPage()
                     1 -> MainPage(navController)

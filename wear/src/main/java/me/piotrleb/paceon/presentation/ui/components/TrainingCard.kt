@@ -1,4 +1,4 @@
-package me.piotrleb.paceon.presentation.ui
+package me.piotrleb.paceon.presentation.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

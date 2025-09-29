@@ -31,7 +31,7 @@ fun MainPage(navController: NavController) {
             shape = CircleShape,
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFB51F1F)),
             contentPadding = ButtonDefaults.ContentPadding,
-            modifier = Modifier.size(90.dp)
+            modifier = Modifier.size(120.dp)
         ) {
             Icon(
                 imageVector = Icons.Default.PlayArrow,
