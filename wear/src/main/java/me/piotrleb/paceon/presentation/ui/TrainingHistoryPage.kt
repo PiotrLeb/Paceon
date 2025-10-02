@@ -9,13 +9,20 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.delay
 import me.piotrleb.paceon.presentation.ui.components.TrainingCard
 
 @Composable
 fun TrainingHistoryPage() {
+
+    LaunchedEffect(Unit) {
+        delay(600)
+    }
+
     Column( modifier = Modifier
         .fillMaxSize()
         .background(Color(0xFF100F0F))
