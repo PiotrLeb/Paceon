@@ -36,6 +36,7 @@ android {
     useLibrary("wear-sdk")
     buildFeatures {
         compose = true
+        viewBinding = true
     }
 }
 

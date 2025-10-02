@@ -12,6 +12,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
@@ -20,10 +21,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
+import kotlinx.coroutines.delay
 import kotlin.math.absoluteValue
 
 @Composable
 fun TrainingTypeSelector() {
+
+    LaunchedEffect(Unit) {
+        delay(600)
+    }
 
     val pagerState = rememberPagerState(initialPage = 0, pageCount = { 5 })
     val gradients = listOf(
@@ -53,8 +59,7 @@ fun TrainingTypeSelector() {
             val zIndex = 1f - pageOffset
 
             Button(
-                onClick = {
-                },
+                onClick = {},
                 shape = CircleShape,
                 contentPadding = ButtonDefaults.ContentPadding,
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),

@@ -11,15 +11,21 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import kotlinx.coroutines.delay
 import me.piotrleb.paceon.presentation.viewmodel.onButtonClick
 
 @Composable
 fun MainPage(navController: NavController) {
+
+    LaunchedEffect(Unit) {
+        delay(600)
+    }
     Box(
         modifier = Modifier
             .fillMaxSize()
