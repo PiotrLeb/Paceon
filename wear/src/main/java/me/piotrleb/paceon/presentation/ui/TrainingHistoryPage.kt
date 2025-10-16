@@ -36,7 +36,7 @@ fun TrainingHistoryPage() {
             verticalArrangement = Arrangement.spacedBy(8.dp)
 
         ) {
-            repeat(20){
+            repeat(3){
                 TrainingCard()
             }
         }

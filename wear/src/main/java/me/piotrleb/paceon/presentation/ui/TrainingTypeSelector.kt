@@ -26,6 +26,7 @@ import kotlin.math.absoluteValue
 
 @Composable
 fun TrainingTypeSelector() {
+//    disable not focused button
 
     LaunchedEffect(Unit) {
         delay(600)
