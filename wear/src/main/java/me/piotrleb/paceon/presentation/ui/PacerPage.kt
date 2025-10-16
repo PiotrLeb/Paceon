@@ -57,7 +57,7 @@ fun PacerPage() {
             ) {
                 TimePicker(
                     modifier = Modifier,
-                    initialMinute = 4,
+                    initialMinute = 0,
                     initialSecond = 0,
                     onTimeSelected = { minute, second ->
                         selectedTime = "%02d:%02d".format(minute, second)
