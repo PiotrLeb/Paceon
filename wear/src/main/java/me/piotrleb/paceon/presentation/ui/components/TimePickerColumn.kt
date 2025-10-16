@@ -29,7 +29,7 @@ fun TimePicker(
     initialSecond: Int = 0,
     onTimeSelected: (minute: Int, second: Int) -> Unit
 ) {
-    val minutes = (0..59).toList()
+    val minutes = (0..10).toList()
     val seconds = (0..59).toList()
 
     var selectedMinute by remember { mutableStateOf(initialMinute) }
