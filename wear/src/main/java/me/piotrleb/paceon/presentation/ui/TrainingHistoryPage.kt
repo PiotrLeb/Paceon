@@ -19,10 +19,6 @@ import me.piotrleb.paceon.presentation.ui.components.TrainingCard
 @Composable
 fun TrainingHistoryPage() {
 
-    LaunchedEffect(Unit) {
-        delay(600)
-    }
-
     Column( modifier = Modifier
         .fillMaxSize()
         .background(Color(0xFF100F0F))

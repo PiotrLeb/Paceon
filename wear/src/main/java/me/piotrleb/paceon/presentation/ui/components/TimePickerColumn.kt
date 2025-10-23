@@ -1,11 +1,9 @@
 package me.piotrleb.paceon.presentation.ui.components
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
@@ -21,26 +19,26 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+var initialMinute = 4
+var initialSecond = 50
 
 @Composable
 fun TimePicker(
     modifier: Modifier = Modifier,
-    initialMinute: Int = 0,
-    initialSecond: Int = 0,
     onTimeSelected: (minute: Int, second: Int) -> Unit
 ) {
-    val minutes = (0..59).toList()
+    val minutes = (0..10).toList()
     val seconds = (0..59).toList()
 
-    var selectedMinute by remember { mutableStateOf(initialMinute) }
-    var selectedSecond by remember { mutableStateOf(initialSecond) }
+
+    var selectedMinute by remember { mutableIntStateOf(initialMinute) }
+    var selectedSecond by remember { mutableIntStateOf(initialSecond) }
 
     Row(
         modifier = modifier,
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // Picker minut
         NumberPicker(
             numbers = minutes,
             selected = selectedMinute,
@@ -54,7 +52,6 @@ fun TimePicker(
         Text(":", color = Color(0xFFFFFFFF), fontSize = 30.sp)
         Spacer(modifier = Modifier.width(8.dp))
 
-        // Picker sekund
         NumberPicker(
             numbers = seconds,
             selected = selectedSecond,
@@ -107,6 +104,11 @@ private fun NumberPicker(
             items(numbers.size) { index ->
                 val number = numbers[index]
                 val isSelected = number == selected
+                if (numbers.size == 60) {
+                    initialSecond = number
+                } else {
+                    initialMinute = number
+                }
 
                 Box(
                     modifier = Modifier

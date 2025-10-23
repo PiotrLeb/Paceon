@@ -22,12 +22,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import kotlinx.coroutines.delay
+import me.piotrleb.paceon.presentation.viewmodel.TrainingSelectorViewModel
 import kotlin.math.absoluteValue
 
+val trainingSelectorViewModel = TrainingSelectorViewModel()
 @Composable
 fun TrainingTypeSelector() {
-//    disable not focused button
-
     LaunchedEffect(Unit) {
         delay(600)
     }
@@ -60,7 +60,9 @@ fun TrainingTypeSelector() {
             val zIndex = 1f - pageOffset
 
             Button(
-                onClick = {},
+                onClick = {
+                    trainingSelectorViewModel.onButtonClick(text[page])
+                },
                 shape = CircleShape,
                 contentPadding = ButtonDefaults.ContentPadding,
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),

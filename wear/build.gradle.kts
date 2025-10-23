@@ -41,6 +41,11 @@ android {
 }
 
 dependencies {
+    // GMS
+    implementation(libs.play.services.location)
+    // Permissions
+    implementation(libs.accompanist.permissions)
+
     implementation(libs.androidx.navigation.compose.v275)
     implementation(libs.androidx.activity.compose.v180)
     implementation(libs.androidx.tiles.material)

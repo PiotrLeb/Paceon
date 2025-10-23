@@ -27,10 +27,6 @@ import me.piotrleb.paceon.presentation.ui.components.TimePicker
 
 @Composable
 fun PacerPage() {
-    var selectedTime by remember { mutableStateOf("12:00") }
-    LaunchedEffect(Unit) {
-        delay(600)
-    }
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -57,10 +53,7 @@ fun PacerPage() {
             ) {
                 TimePicker(
                     modifier = Modifier,
-                    initialMinute = 4,
-                    initialSecond = 0,
                     onTimeSelected = { minute, second ->
-                        selectedTime = "%02d:%02d".format(minute, second)
                     }
                 )
             }
